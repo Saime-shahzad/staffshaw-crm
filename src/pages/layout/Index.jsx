@@ -7,6 +7,7 @@ import icons from "../../assets/icons";
 import { CardsSection } from "../../components/cardsSection/CardsSection";
 import Popup from "../../assets/select/Popup";
 import { FilterComp } from "../../assets/others/Others";
+// import DraggableComponent from "../../components/dragAndDrop/DraggableComponent";
 
 const {Content, Sider } = Layout;
 
@@ -25,7 +26,7 @@ const Index = () => {
         <div className="sidebar-options  ">
           {!collapsed ? (
             <div className="menueClass d-flex ">
-              <div class="BVceZHOoUszsgw r6KV0yEdmnh3Op">T</div>
+              <div class="BVceZHOoUszsgw r6KV0yEdmnh3Op">S</div>
 
               <div className=" text-white text-class  my-1 px-2 d-flex ">
                 Staffshaw Workspace <br />
@@ -97,10 +98,12 @@ const Index = () => {
               padding: 24,
               minHeight: 433,
               width:"1400px",
+              // background: "white",
               background: colors.theme,
             }}
           >
             <CardsSection />
+            {/* <DraggableComponent  /> */}
           </div>
         </Content>
       </Layout>

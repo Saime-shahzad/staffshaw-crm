@@ -2,11 +2,12 @@ import React from "react";
 import { Cards } from "../../assets/cards/Cards";
 import icons from "../../assets/icons";
 
+
 export const CardsSection = () => {
   const cardArray = [
     {
       cardId: 1,
-      cardName: "card1",
+      cardName: "To do",
     },
     {
       cardId: 2,
@@ -44,12 +45,14 @@ export const CardsSection = () => {
   return (
     <div className="card-Parrent">
       <div className="card1 d-flex justify-content-between">
+      
         {cardArray?.map((items)=>{
             return(
 
-                <Cards data={items.cardName ==="Add Card" ? addCard :dataArray} cardsName={items.cardName} cardId={items.cardId}  icon={icons.editIcon} />
+                <Cards data={items.cardName ==="Add Card" ? addCard :items.cardName=== "To do" ? dataArray:[]} cardsName={items.cardName} cardId={items.cardId}  icon={icons.editIcon} />
             )
         })}
+         
       </div>
     </div>
   );
