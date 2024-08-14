@@ -1,7 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+<<<<<<< HEAD
 /node_modules
+=======
+./server/node_modules
+>>>>>>> 0432cf1f8c1afd67b6f392d0d05d0be1c636ec4c
 /.pnp
 .pnp.js
 
