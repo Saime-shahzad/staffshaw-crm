@@ -14,7 +14,6 @@ export const Header = () => {
     {
         projectName: "Second-Project",
     },
-   
   ];
 
   const getLastIndexs=projectsNames.slice(-2)
