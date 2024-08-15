@@ -9,6 +9,7 @@ export const Buttons = ({text,  onClick , className }) => {
 
 <Button onClick={onClick}  className={className} style={{backgroundColor:colors.buttonColor}}>{text}</Button>
 
+
     </div>
   )
 }
