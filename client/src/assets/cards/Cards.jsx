@@ -11,6 +11,8 @@ export const Cards = ({ icon, data, cardsName }) => {
   const [items, setItems] = useState(data);
   const [itemCardName, setIsCardName] = useState(cardsName);
   const [draggedElement, setDraggedElement] = useState(null);
+  console.log("draggedElement>>>", draggedElement);
+  
 
   const dragStart = (event, itemId) => {
     event.dataTransfer.setData("text/plain", JSON.stringify({ itemId, cardsName }));
