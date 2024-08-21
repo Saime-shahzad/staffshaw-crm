@@ -4,16 +4,21 @@ import { Layout } from "antd";
 import colors from "../../assets/colors/color";
 import "./Index.css";
 import icons from "../../assets/icons";
-import { CardsSection } from "../../components/cardsSection/CardsSection";
 import Popup from "../../assets/select/Popup";
 import { FilterComp } from "../../assets/others/Others";
+import {  Link, useLocation } from "react-router-dom";
+
+import AppRoutes from "../../routes/index";
+
+// import {Inputs} from "../../assets/input/Inputs"
 // import DraggableComponent from "../../components/dragAndDrop/DraggableComponent";
 
-const {Content, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 const Index = () => {
   const [collapsed, setCollapsed] = useState(false);
- 
+  const location=useLocation()
+
   return (
     <Layout
       style={{
@@ -21,23 +26,68 @@ const Index = () => {
         backgroundColor: colors.theme,
       }}
     >
-      <Sider width={!collapsed ? "250" : "20"} collapsed={collapsed} className="borderClass">
+      <Sider
+        width={!collapsed ? "250" : "20"}
+        collapsed={collapsed}
+        className="borderClass"
+      >
         <div className="demo-logo-vertical" />
         <div className="sidebar-options  ">
           {!collapsed ? (
-            <div className="menueClass d-flex ">
-              <div class="BVceZHOoUszsgw r6KV0yEdmnh3Op">S</div>
+            <div className="parrent">
+              <div className="menueClass d-flex ">
+                <div class="BVceZHOoUszsgw r6KV0yEdmnh3Op">S</div>
 
-              <div className=" text-white text-class  my-1 px-2 d-flex ">
-                Staffshaw Workspace <br />
-                free
-                <div
-                  className="m-1 my-3 cursor-pointer"
-                  onClick={(value) => setCollapsed(value)}
-                >
-                  {icons.sidebarclose}
+                <div className=" text-white text-class  my-1 px-2 d-flex ">
+                  Staffshaw Workspace <br />
+                  free
+                  <div
+                    className="m-1 my-3 cursor-pointer"
+                    onClick={(value) => setCollapsed(value)}
+                  >
+                    {icons.sidebarclose}
+                  </div>
                 </div>
               </div>
+
+              <Link to='/add-board' className="text-decoration-none">
+              <div
+                className="addworkSpace-parrent border-0 mt-1  "
+                style={{ cursor: "pointer" }}
+              >
+                <div className=" d-flex ">
+                  <div
+                    className="m-1 my-2  text-white  "
+                    // onClick={(value) => setCollapsed(value)}
+                  >
+                    {icons.appStoreOutlined}
+                  </div>
+                  <div className=" text-white align-items-center  my-1 px-2 d-flex ">
+                    Add Your WorkSpace
+                  </div>
+                 
+                </div>
+              </div>
+                </Link>
+              <Link to='/users' className="text-decoration-none">
+              <div
+                className="addworkSpace-parrent border-0 mt-1  "
+                style={{ cursor: "pointer" }}
+              >
+                <div className=" d-flex ">
+                  <div
+                    className="m-1 my-2  text-white  "
+                    // onClick={(value) => setCollapsed(value)}
+                  >
+                    {icons.peopleGroupIcon}
+                  </div>
+                  <div className=" text-white align-items-center  my-1 px-2 d-flex ">
+                    Add Users
+                  </div>
+                 
+                </div>
+              </div>
+                </Link>
             </div>
           ) : (
             <div
@@ -77,32 +127,45 @@ const Index = () => {
               </span>
             </div>
             <div className="filter-Section">
-          <div className="filterBox text-white d-flex p-1 px-2 justify-content-between   styleButton"  >
-            <div className="filterIcon mx-2 ">
-                    <Popup title="Filters" className='text-white bg-body p-0 bg-transparent border-0' icon={icons.filterIcon} component={<FilterComp  icon={icons.peopleGroupIcon} />} />
-            </div>
-            <div className="filterTittle fw-bolder">
-              Filter
-            </div>
-          </div>
-
-            
+              <div className="filterBox text-white d-flex p-1 px-2 justify-content-between   styleButton">
+                <div className="filterIcon mx-2 ">
+                  <Popup
+                    title="Filters"
+                    className="text-white bg-body p-0 bg-transparent border-0"
+                    icon={icons.filterIcon}
+                    component={<FilterComp icon={icons.peopleGroupIcon} />}
+                  />
+                </div>
+                <div className="filterTittle fw-bolder">Filter</div>
+              </div>
             </div>
           </div>{" "}
         </div>
         <Content
-         style={{backgroundColor:colors.theme, width:"auto" , overflow:"auto"}}
+          style={{
+            backgroundColor: colors.theme,
+            width: "auto",
+            overflow: "auto",
+          }}
         >
           <div
             style={{
               padding: 24,
               minHeight: 433,
-              width:"1400px",
+              width:location.pathname=== "/" ? "1400px" : "100%",
+              // width: "1400px",
               // background: "white",
               background: colors.theme,
             }}
           >
-            <CardsSection />
+            {/* <Routes>
+              <Route path="/" element={<CardsSection />} />
+              <Route path="/add-board" element={<NewBoard />} />
+            </Routes> */}
+            <AppRoutes />
+
+            {/* <CardsSection />
+            <NewBoard /> */}
             {/* <DraggableComponent  /> */}
           </div>
         </Content>
