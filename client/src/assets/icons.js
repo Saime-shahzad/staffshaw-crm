@@ -16,7 +16,9 @@ import {
     QuestionCircleOutlined ,
     EditOutlined,
     TagsOutlined,
-    PaperClipOutlined
+    PaperClipOutlined,
+    AppstoreAddOutlined,
+    UnlockOutlined
   } from '@ant-design/icons';
 import colors from './colors/color';
   const icons={
@@ -36,7 +38,9 @@ import colors from './colors/color';
     editIcon: <EditOutlined />,
     popupclose: <CloseOutlined />,
     labelIcons: <TagsOutlined />,
+    locakIcons: <UnlockOutlined />,
     fileUploadIcons:<PaperClipOutlined />,
+    appStoreOutlined:<AppstoreAddOutlined />,
     templeteIcons: <CaretRightOutlined style={{fontSize:"15px"}}/>,
     sidebarOpen: <RightOutlined style={{backgroundColor:colors.darkTheme , padding:"13px" , borderRadius:"10px"}}  />,
   }
